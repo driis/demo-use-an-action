@@ -1,6 +1,11 @@
 name: Say Hello
 on:
   workflow_dispatch:
+    inputs: 
+      who-to-greet:
+        description: "Who are we saying Hello to?"
+        required: false
+        default: "Eddie"
   
 jobs:
   hello:
@@ -9,3 +14,4 @@ jobs:
     steps:
       - name: Say Hello
         uses: driis/hello-world-docker-action@v1
+      
